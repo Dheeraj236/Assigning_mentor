@@ -12,12 +12,13 @@ app.use(cors());
 
 try 
 {
-   
-
     await mongo.connect()
 
     app.use(express.json())
 
+app.use('/', (req, res) =>
+  res.send('Welcome to API'),
+)
 app.use("/students",studentRoutes)
 
 app.use("/mentors",mentorRoutes)
