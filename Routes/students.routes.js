@@ -15,7 +15,7 @@ router.get("/",async (req,res)=>{
 })
 
 //create new student
-router.post("/",async(req,res)=>{
+router.post("/students",async(req,res)=>{
 const {value,error}= studentSchema.validate(req.body)
 if(error) return res.status(400).send({Error:error.details[0].message})
 let data;

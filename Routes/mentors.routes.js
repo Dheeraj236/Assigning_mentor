@@ -12,9 +12,10 @@ router.get("/",async(req,res)=>{
 })
 
 //create new Mentor
-router.post("/",async(req,res)=>{
+router.post("/mentor",async(req,res)=>{
     console.log("in mentor post",req.body)
     const {value,error}= await schema.mentorSchema.validate(req.body)
+    
 console.log(value,error)
     if(error) return res.status(400).send({Error:error.details[0].message})
     data= await mongo.mentors.insert(value)

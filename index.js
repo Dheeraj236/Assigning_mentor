@@ -22,7 +22,7 @@ app.use("/students",studentRoutes)
 
 app.use("/mentors",mentorRoutes)
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT
 
 app.listen(port,()=>{
     console.log("server is running on ",port)
